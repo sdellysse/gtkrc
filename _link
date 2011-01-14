@@ -1,0 +1,3 @@
+ln -sf ./gtkrc-2.0 ~/.gtkrc-2.0
+ln -sf ./themes ~/.themes
+
