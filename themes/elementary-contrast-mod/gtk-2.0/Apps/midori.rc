@@ -1,0 +1,64 @@
+style "midori-main"
+{
+
+	bg_pixmap[NORMAL]		= "/midori/base.png"	
+}
+
+style "midori-close"
+{
+	stock["gtk-close"]	= {{ "Icons/close-tiny.png", *, *, * }}
+}
+
+style "midori-entry"
+{
+	ythickness			= 4
+}
+
+style "midori-notebook" = "murrine-notebook"
+{
+
+	GtkNotebook	::tab-overlap	= 0
+
+	bg[NORMAL]			= @bg_color		# selected tab entire
+
+	xthickness			= 0
+	ythickness			= 0
+}
+
+style "midori-panel-toolbar"
+{
+	GtkToolbar:: shadow-type = GTK_SHADOW_NONE
+
+	bg[NORMAL]			= shade (0.75, @bg_color)
+
+	engine "murrine" {
+		toolbarstyle		= 1
+		lightborder_shade	= 1.0
+		gradient_shades     	= {1.0,1.0,1.0,1.0}
+	}
+}
+
+style "midori-menubar" = "murrine-menubar"
+{
+	GtkMenuBar:: shadow-type = GTK_SHADOW_NONE
+}
+
+style "midori-toolbar" 
+{
+	bg[NORMAL]        = @bg_color
+
+	engine "murrine" {
+		contrast		= 1.30
+		toolbarstyle		= 1
+		lightborder_shade	= 1.0
+		gradient_shades     	= {1.0,0.94,0.94,0.88}
+	}
+}
+
+widget		"MidoriBrowser"							style "midori-main"
+widget_class	"MidoriBrowser*MenuBar*"					style "midori-menubar"
+widget_class	"MidoriBrowser*GtkToolbar"					style "midori-toolbar"
+widget		"MidoriBrowser.GtkVBox.*.GtkEntry"				style "midori-entry"
+widget		"MidoriBrowser.GtkVBox.GtkHPaned.GtkVPaned.GtkNotebook"		style "midori-notebook"
+widget		"MidoriBrowser.*.MidoriPanel.*.GtkToolbar"			style "midori-panel-toolbar"
+widget		"MidoriBrowser*"						style "midori-close"

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=elementary-contrast-mod
+Comment=elementary desktop default theme
+Encoding=UTF-8
+
+Name[en_US]=elementary-contrast-mod
+
+[X-GNOME-Metatheme]
+GtkTheme=elementary-contrast-mod
+MetacityTheme=elementary-contrast-mod
+IconTheme=elementary-monochrome
+CursorTheme=Human
+ButtonLayout=close,minimize,maximize:

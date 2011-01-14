@@ -1,0 +1,30 @@
+##########################################
+# NOTEBOOK (TABS)	
+##########################################
+style "notebook" = "default"
+{
+
+xthickness		= 4
+ythickness		= 1
+
+bg[NORMAL]		= shade (1.0, @bg_color)	# selected tab entire
+bg[ACTIVE]		= shade (1.0, @base_color)	# unselected tab
+fg[ACTIVE]		= shade (1.0, @text_color)	# unselected tab
+
+
+GtkNotebook::tab-overlap				= -1
+GtkNotebook::tab-roundness				= 0
+
+engine "murrine" {
+contrast 		= 0.3
+}
+}
+
+##########################################
+# MATCHES	
+##########################################
+widget_class "*<GtkNotebook>"    			style "notebook"
+widget_class "*<GtkNotebook>*<GtkEventBox>"     	style "notebook"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"  	style "notebook"
+widget_class "*<GtkNotebook>*<GtkLayout>"      		style "notebook"
+widget_class "*<GtkNotebook>*<GtkLabel>"		style "notebook"
